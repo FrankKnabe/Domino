@@ -1,16 +1,11 @@
-﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:Domino" x:Class="Domino.GameTable"
-        Title="GameTable" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Width="1280" Height="1024">
-    <Canvas  Margin="0,-10,-6,-18" Width="1280" Height="1024" RenderTransformOrigin="0.5,0.498" HorizontalAlignment="Left">
-        <StackPanel HorizontalAlignment="Left" Height="100" Margin="496,914,0,0" VerticalAlignment="Top" Width="230                     " Background="#FFE5EE2A"/>
-        <StackPanel HorizontalAlignment="Left" Height="100" Margin="496,10,0,0" VerticalAlignment="Top" Width="230" Background="#FF2BE03C">
-
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="230" Margin="10,410,0,0" VerticalAlignment="Top" Width="100" Background="#FF2B52D6"/>
-        <StackPanel HorizontalAlignment="Left" Height="230" Margin="1170,410,0,0" VerticalAlignment="Top" Width="100" Background="#FFE43030"/>
-        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="#FFE22020" BorderThickness="2" Grid.IsSharedSizeScope="True" Margin="496,958,0,0">
+﻿<UserControl x:Class="Domino.Dominostein"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid>
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="#FFE22020" BorderThickness="2" Grid.IsSharedSizeScope="True">
 
             <Grid  Height="42" Width="42" Margin="-2,-2,0,0" Grid.IsSharedSizeScope="True">
                 <Grid.RowDefinitions>
@@ -34,7 +29,7 @@
                 <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
             </Grid>
         </Border>
-        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="Black" BorderThickness="2" Grid.IsSharedSizeScope="True" Margin="496,914,0,0">
+        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="Black" BorderThickness="2" Grid.IsSharedSizeScope="True" Margin="0,44,0,0">
 
             <Grid  Height="42" Width="42" Margin="0,-2,-2,0" Grid.IsSharedSizeScope="True">
                 <Grid.RowDefinitions>
@@ -58,6 +53,5 @@
                 <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
             </Grid>
         </Border>
-        <local:Dominostein Canvas.Left="496" Canvas.Top="22"/>
-    </Canvas>
-</Window>
+    </Grid>
+</UserControl>
