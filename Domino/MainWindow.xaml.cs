@@ -30,6 +30,8 @@ namespace Domino
             int player = Convert.ToInt32(numud.Child.Text);
             int aiplayer = Convert.ToInt32(numud1.Child.Text);
 
+            var newWindow = new GameTable(player, aiplayer);
+            newWindow.Show();
 
         }
 

@@ -19,7 +19,7 @@ namespace Domino
     /// </summary>
     public partial class GameTable : Window
     {
-        public GameTable()
+        public GameTable(int player, int aiplayer)
         {
             InitializeComponent();
         }
