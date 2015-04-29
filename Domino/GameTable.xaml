@@ -1,0 +1,8 @@
+﻿<Window x:Class="Domino.GameTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GameTable" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Margin="0,0,-454,-273" HorizontalAlignment="Left" Width="748">
+        
+    </Grid>
+</Window>
