@@ -4,60 +4,55 @@
         xmlns:local="clr-namespace:Domino" x:Class="Domino.GameTable"
         Title="GameTable" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Width="1280" Height="1024">
     <Canvas  Margin="0,-10,-6,-18" Width="1280" Height="1024" RenderTransformOrigin="0.5,0.498" HorizontalAlignment="Left">
-        <StackPanel HorizontalAlignment="Left" Height="100" Margin="496,914,0,0" VerticalAlignment="Top" Width="230                     " Background="#FFE5EE2A"/>
-        <StackPanel HorizontalAlignment="Left" Height="100" Margin="496,10,0,0" VerticalAlignment="Top" Width="230" Background="#FF2BE03C">
-
+        <StackPanel Name="Spieler1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="230                     " Background="#FFE5EE2A" Canvas.Left="496" Canvas.Top="895">
+            <Grid Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="230" Margin="10,410,0,0" VerticalAlignment="Top" Width="100" Background="#FF2B52D6"/>
-        <StackPanel HorizontalAlignment="Left" Height="230" Margin="1170,410,0,0" VerticalAlignment="Top" Width="100" Background="#FFE43030"/>
-        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="#FFE22020" BorderThickness="2" Grid.IsSharedSizeScope="True" Margin="496,958,0,0">
-
-            <Grid  Height="42" Width="42" Margin="-2,-2,0,0" Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                </Grid.RowDefinitions>
+        <StackPanel Name="Spieler2" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="230" Background="#FF2BE03C" Canvas.Left="496" Canvas.Top="10">
+            <Grid Height="100">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
                 </Grid.ColumnDefinitions>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
+                <local:Dominostein Grid.Column="0"/>
+                <local:Dominostein Grid.Column="1"/>
+                <local:Dominostein Grid.Column="2"/>
+                <local:Dominostein Grid.Column="3"/>
+                <local:Dominostein Grid.Column="4"/>
             </Grid>
-        </Border>
-        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="Black" BorderThickness="2" Grid.IsSharedSizeScope="True" Margin="496,914,0,0">
-
-            <Grid  Height="42" Width="42" Margin="0,-2,-2,0" Grid.IsSharedSizeScope="True">
+        </StackPanel>
+        <StackPanel Name="Spieler3" HorizontalAlignment="Left" Height="230" Margin="10,410,0,0" VerticalAlignment="Top" Width="100" Background="#FF2B52D6">
+            <Grid Width="100" Height="230">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                </Grid.ColumnDefinitions>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
             </Grid>
-        </Border>
-        <local:Dominostein Canvas.Left="496" Canvas.Top="22"/>
+        </StackPanel>
+        <StackPanel Name="Spieler4" HorizontalAlignment="Left" Height="230" Margin="1170,410,0,0" VerticalAlignment="Top" Width="100" Background="#FFE43030">
+            <Grid Width="100" Height="230">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </StackPanel>
+
     </Canvas>
 </Window>

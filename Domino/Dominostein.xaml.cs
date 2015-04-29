@@ -25,5 +25,8 @@ namespace Domino
             InitializeComponent();
         }
         public int ObereAugenzahl { get; set; }
+
+        public int UntereAugenzahl { get; set; }
+
     }
 }
