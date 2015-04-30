@@ -3,56 +3,5 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Domino" x:Class="Domino.GameTable"
         Title="GameTable" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Width="1280" Height="1024">
-    <Canvas  Margin="0,-10,-6,-18" Width="1280" Height="1024" RenderTransformOrigin="0.5,0.498" HorizontalAlignment="Left">
-        <StackPanel Name="Spieler1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="230                     " Background="#FFE5EE2A" Canvas.Left="496" Canvas.Top="895">
-            <Grid Height="100">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                </Grid.ColumnDefinitions>
-            </Grid>
-        </StackPanel>
-        <StackPanel Name="Spieler2" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="230" Background="#FF2BE03C" Canvas.Left="496" Canvas.Top="10">
-            <Grid Height="100">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                    <ColumnDefinition Width="46"/>
-                </Grid.ColumnDefinitions>
-                <local:Dominostein Grid.Column="0"/>
-                <local:Dominostein Grid.Column="1"/>
-                <local:Dominostein Grid.Column="2"/>
-                <local:Dominostein Grid.Column="3"/>
-                <local:Dominostein Grid.Column="4"/>
-            </Grid>
-        </StackPanel>
-        <StackPanel Name="Spieler3" HorizontalAlignment="Left" Height="230" Margin="10,410,0,0" VerticalAlignment="Top" Width="100" Background="#FF2B52D6">
-            <Grid Width="100" Height="230">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                </Grid.RowDefinitions>
-            </Grid>
-        </StackPanel>
-        <StackPanel Name="Spieler4" HorizontalAlignment="Left" Height="230" Margin="1170,410,0,0" VerticalAlignment="Top" Width="100" Background="#FFE43030">
-            <Grid Width="100" Height="230">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                    <RowDefinition Height="46"/>
-                </Grid.RowDefinitions>
-            </Grid>
-        </StackPanel>
-
-    </Canvas>
+    <Canvas x:Name="Spieltisch"  Margin="0,-10,-6,-18" Width="1280" Height="1024" RenderTransformOrigin="0.5,0.498" HorizontalAlignment="Left"/>
 </Window>
