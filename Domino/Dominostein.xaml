@@ -4,54 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d">
-    <Grid>
-        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="#FFE22020" BorderThickness="2" Grid.IsSharedSizeScope="True">
-
-            <Grid  Height="42" Width="42" Margin="-2,-2,0,0" Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                </Grid.ColumnDefinitions>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Red" HorizontalAlignment="Center" Height="5" Stroke="Red" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-            </Grid>
-        </Border>
-        <Border HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="44"  BorderBrush="Black" BorderThickness="2" Grid.IsSharedSizeScope="True" Margin="0,44,0,0">
-
-            <Grid  Height="42" Width="42" Margin="0,-2,-2,0" Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                    <RowDefinition Height="14"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                    <ColumnDefinition Width="14"/>
-                </Grid.ColumnDefinitions>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="1" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="2" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="1" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-                <Ellipse Fill="Black" HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Center" Width="5" Grid.Row="0" Grid.Column="2" Grid.IsSharedSizeScope="True"/>
-            </Grid>
-        </Border>
+    <Grid  x:Name="stein" Height="90" Width="40">
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,24 +20,43 @@ namespace Domino
     /// </summary>
     public partial class GameTable : Window
     {
-        public GameTable(int player, int aiplayer)
+        public GameTable(int player)
         {
             InitializeComponent();
 
             StackPanel[] sp= new StackPanel[4];
-            StackPanel sp1 = new StackPanel();
-            StackPanel sp2 = new StackPanel();
-            StackPanel sp3 = new StackPanel();
-            StackPanel sp4 = new StackPanel();
+
+            ArrayList ObereSteinHälfte = new ArrayList(10);
+            ArrayList UntereSteinHälfte = new ArrayList(10);
+
+            int ObereAugenzahl = 0;
+            int UntereAugenzahl = 0;
+
+            int zufallszahl;
+            Random rnd = new Random();
 
 
-          
-            
-            sp2.Name = "Spieler2";
-            sp3.Name = "Spieler3";
-            sp4.Name = "Spieler4";
+            for (int i = 0; i < 10; i++)
+            {
+                ObereSteinHälfte.Add(i);
+                UntereSteinHälfte.Add(i);
+            }
 
-            int l = 10;
+            List <Dominostein> DStein= new List<Dominostein>();
+
+            for (int o = 0; o < ObereSteinHälfte.Count; o++)
+            {
+                for (int u = 0; u < UntereSteinHälfte.Count; u++)
+                {
+                    ObereAugenzahl = Convert.ToInt32(ObereSteinHälfte[o]);
+                    UntereAugenzahl = Convert.ToInt32(UntereSteinHälfte[u]);
+
+                    DStein.Add(new Dominostein(ObereAugenzahl, UntereAugenzahl));
+
+                }
+            }
+
+            int l = 0;
 
             //sp2.Children.Add(ds);
             //Grid.SetRow(sp1, 0);
@@ -55,28 +75,33 @@ namespace Domino
                 
                 for (int j = 0; j < 5; j++)
                 {
-                  Grid.SetRow(sp[i], j);
-                  sp[i].Children.Add(new Dominostein());
+                  Grid.SetRow(sp[i],j);
+                  zufallszahl = rnd.Next(0, DStein.Count);
+                  sp[i].Children.Add(DStein[zufallszahl]);
+                  DStein.RemoveAt(zufallszahl);
                 }
+
+
                 Spieltisch.Children.Add(sp[i]);
                 l += 350;
 
-                int r = i * 10 + 10;
-                int g = i * 15 + 10;
-                int b = i * 10 + 10;
+                //int r = i * 25 + 100;
+                //int g = i * 27 + 100;
+                //int b = i * 25 + 100;
 
-                string farbe = "#ff" + r.ToString() + g.ToString() + b.ToString();
-                sp[i].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(farbe));
+                //string hexzahl = r.ToString("X") + g.ToString("X") + b.ToString("X");
+
+                //MessageBox.Show(hexzahl);
+
+                //string farbe = "#ff" + hexzahl.ToString();
+                //sp[i].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(farbe));
 
             }
-            /*
+
             sp[0].Background = new SolidColorBrush(Colors.Yellow);
             sp[1].Background = new SolidColorBrush(Colors.Green);
             sp[2].Background = new SolidColorBrush(Colors.Blue);
-            sp[3].Background = new SolidColorBrush(Colors.Red);
-            */
-
-
+            sp[3].Background = new SolidColorBrush(Colors.DarkRed);
 
             //sp1.RenderTransform = new RotateTransform(90);
             

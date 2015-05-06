@@ -28,9 +28,7 @@ namespace Domino
         private void cmdStart_Click(object sender, RoutedEventArgs e)
         {
             int player = Convert.ToInt32(numud.Child.Text);
-            int aiplayer = Convert.ToInt32(numud1.Child.Text);
-
-            var newWindow = new GameTable(player, aiplayer);
+            var newWindow = new GameTable(player);
             newWindow.Show();
 
         }
