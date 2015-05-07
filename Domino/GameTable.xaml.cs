@@ -23,11 +23,9 @@ namespace Domino
         public GameTable(int player)
         {
             InitializeComponent();
-
+            //Initialisierung der Variabeln
+            //Die StackPanel dienen als Spielflächen, erstmal für maximal 4 Spieler
             StackPanel[] sp= new StackPanel[4];
-
-            ArrayList ObereSteinHälfte = new ArrayList(10);
-            ArrayList UntereSteinHälfte = new ArrayList(10);
 
             int ObereAugenzahl = 0;
             int UntereAugenzahl = 0;
@@ -36,31 +34,24 @@ namespace Domino
             Random rnd = new Random();
 
 
-            for (int i = 0; i < 10; i++)
-            {
-                ObereSteinHälfte.Add(i);
-                UntereSteinHälfte.Add(i);
-            }
-
             List <Dominostein> DStein= new List<Dominostein>();
 
-            for (int o = 0; o < ObereSteinHälfte.Count; o++)
+            //Erstellen der oberen und unteren Augenzahl des Dominosteins, anschließend werden diese
+            //der Klasse Dominostein zugewiesen und in eine Liste gepackt
+            for (int o = 0; o < 10; o++)
             {
-                for (int u = 0; u < UntereSteinHälfte.Count; u++)
-                {
-                    ObereAugenzahl = Convert.ToInt32(ObereSteinHälfte[o]);
-                    UntereAugenzahl = Convert.ToInt32(UntereSteinHälfte[u]);
+
+                    ObereAugenzahl = o;
+                    UntereAugenzahl = o;
 
                     DStein.Add(new Dominostein(ObereAugenzahl, UntereAugenzahl));
 
-                }
             }
 
+            //Positionsvariabel für die Position von links aus gesehen
             int l = 0;
 
-            //sp2.Children.Add(ds);
-            //Grid.SetRow(sp1, 0);
-
+            //Erstellung des StackPanel-Arrays für die Spielflächen der 4 Spieler
             for (int i = 0; i < 4; i++)
             {
                 sp[i] = new StackPanel();
@@ -73,18 +64,23 @@ namespace Domino
                 sp[i].Height = 100;
                 sp[i].Width = 230;
                 
+                //Hinzufügen eines Grids, indem die Spielsteine hinzugefügt werden sollen. Dabei werden
+                //sie zufällig aus der Listen gezogen und entsprechend auch aus der Liste gelöscht
                 for (int j = 0; j < 5; j++)
                 {
-                  Grid.SetRow(sp[i],j);
+                  Grid.SetRow(sp[i], j);
                   zufallszahl = rnd.Next(0, DStein.Count);
                   sp[i].Children.Add(DStein[zufallszahl]);
                   DStein.RemoveAt(zufallszahl);
                 }
 
-
+                //Die Spielfläche/StackPanel werden am Spieltisch angebracht 
                 Spieltisch.Children.Add(sp[i]);
+                //Die Position der nächsten Spielfläche wird bestimmt
                 l += 350;
 
+                //Hier sollten die Farben der Spielflächen dynamisch erstellt werden, da aber das Ergebnis
+                //unbefriedigend war, wurde diese Idee erst einmal verworfen
                 //int r = i * 25 + 100;
                 //int g = i * 27 + 100;
                 //int b = i * 25 + 100;
@@ -97,7 +93,7 @@ namespace Domino
                 //sp[i].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(farbe));
 
             }
-
+            //Statische Farbzuweisung der Spielflächen
             sp[0].Background = new SolidColorBrush(Colors.Yellow);
             sp[1].Background = new SolidColorBrush(Colors.Green);
             sp[2].Background = new SolidColorBrush(Colors.Blue);

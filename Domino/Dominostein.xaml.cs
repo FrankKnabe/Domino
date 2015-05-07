@@ -29,13 +29,14 @@ namespace Domino
         }
         public Dominostein(int ObereAugenzahl, int UntereAugenzahl)
         {
+            //Konstruktor für den Dominostein, die Augenzahlen als Parameter übergeben
             InitializeComponent();
             InitDominostein(ObereAugenzahl, UntereAugenzahl);
         }
         public void InitDominostein(int ObereAugenzahl, int UntereAugenzahl)
         {
             //InitializeComponent();
-
+            //Der Rahmen der obere und untere Hälfte des Spielsteines
             Border BorderRot = new Border();
             Border BorderSchwarz = new Border();
 
@@ -54,6 +55,7 @@ namespace Domino
             BorderRot.Margin = new Thickness(0,0,0,0);
             BorderSchwarz.Margin = new Thickness(0,40,0,0);
 
+            //Erstellung der Gitterfelder für die Punkte, die die Augenzahlen repräsentieren
             Grid GridRot = new Grid();
             Grid GridSchwarz = new Grid();
 
@@ -62,6 +64,7 @@ namespace Domino
             GridRot.Width = 44;
             GridSchwarz.Width = 44;
 
+            //Die Reihen und Zeilen, die ein 3x3 Gitterfeld erzeugen
             ColumnDefinition[] colDef = new ColumnDefinition[3];
             RowDefinition[] rowDef = new RowDefinition[3];
 
@@ -76,27 +79,26 @@ namespace Domino
                 GridSchwarz.RowDefinitions.Add(new RowDefinition());
             }
 
+            //Erzeugen der Punkte, die die Augenzahlen entsprechend eines Würfels repräsentieren
             Ellipse RoteEllipse = new Ellipse();
             Ellipse SchwarzeEllipse = new Ellipse();
 
+            RoteEllipse.Fill = System.Windows.Media.Brushes.Red;
+            SchwarzeEllipse.Fill = System.Windows.Media.Brushes.Black;
+            RoteEllipse.HorizontalAlignment = HorizontalAlignment.Center;
+            SchwarzeEllipse.HorizontalAlignment = HorizontalAlignment.Center;
+            RoteEllipse.Height = 5;
+            SchwarzeEllipse.Height = 5;
+            RoteEllipse.Stroke = System.Windows.Media.Brushes.Red;
+            SchwarzeEllipse.Stroke = System.Windows.Media.Brushes.Black;
+            RoteEllipse.VerticalAlignment = VerticalAlignment.Center;
+            SchwarzeEllipse.VerticalAlignment = VerticalAlignment.Center;
+            RoteEllipse.Width = 5;
+            SchwarzeEllipse.Width = 5;
 
-                RoteEllipse.Fill = System.Windows.Media.Brushes.Red;
-                SchwarzeEllipse.Fill = System.Windows.Media.Brushes.Black;
-                RoteEllipse.HorizontalAlignment = HorizontalAlignment.Center;
-                SchwarzeEllipse.HorizontalAlignment = HorizontalAlignment.Center;
-                RoteEllipse.Height = 5;
-                SchwarzeEllipse.Height = 5;
-                RoteEllipse.Stroke = System.Windows.Media.Brushes.Red;
-                SchwarzeEllipse.Stroke = System.Windows.Media.Brushes.Black;
-                RoteEllipse.VerticalAlignment = VerticalAlignment.Center;
-                SchwarzeEllipse.VerticalAlignment = VerticalAlignment.Center;
-                RoteEllipse.Width = 5;
-                SchwarzeEllipse.Width = 5;
-                //RoteEllipse.Visibility = Visibility.Hidden;
-                //SchwarzeEllipse.Visibility = Visibility.Hidden;
-
-
-
+            //Switch-Case-Anweisung für dynamische Erzeugung der Augenzahl, die der Klasse aus der
+            //Liste der Dominosteine zugewiesen wird. Die Punkte bekommen eine Position im Gitterfeld
+            //und werden dann dem Grid hinzugefügt
                 switch (ObereAugenzahl)
                 {
                     case 1:
@@ -359,6 +361,7 @@ namespace Domino
                         break;
                 }
 
+                //Das Gitterfeld wird dem Rahmen zugefügt und der Rahmen dem Spielstein    
                 //BorderRot.IsAncestorOf(GridRot);
                 //BorderSchwarz.IsAncestorOf(GridSchwarz);
                 stein.Children.Add(BorderRot);
