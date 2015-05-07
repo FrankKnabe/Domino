@@ -79,22 +79,6 @@ namespace Domino
                 GridSchwarz.RowDefinitions.Add(new RowDefinition());
             }
 
-            //Erzeugen der Punkte, die die Augenzahlen entsprechend eines Würfels repräsentieren
-            Ellipse RoteEllipse = new Ellipse();
-            Ellipse SchwarzeEllipse = new Ellipse();
-
-            RoteEllipse.Fill = System.Windows.Media.Brushes.Red;
-            SchwarzeEllipse.Fill = System.Windows.Media.Brushes.Black;
-            RoteEllipse.HorizontalAlignment = HorizontalAlignment.Center;
-            SchwarzeEllipse.HorizontalAlignment = HorizontalAlignment.Center;
-            RoteEllipse.Height = 5;
-            SchwarzeEllipse.Height = 5;
-            RoteEllipse.Stroke = System.Windows.Media.Brushes.Red;
-            SchwarzeEllipse.Stroke = System.Windows.Media.Brushes.Black;
-            RoteEllipse.VerticalAlignment = VerticalAlignment.Center;
-            SchwarzeEllipse.VerticalAlignment = VerticalAlignment.Center;
-            RoteEllipse.Width = 5;
-            SchwarzeEllipse.Width = 5;
 
             //Switch-Case-Anweisung für dynamische Erzeugung der Augenzahl, die der Klasse aus der
             //Liste der Dominosteine zugewiesen wird. Die Punkte bekommen eine Position im Gitterfeld
@@ -102,270 +86,163 @@ namespace Domino
                 switch (ObereAugenzahl)
                 {
                     case 1:
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 1);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 2:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 3:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 1);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 4:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 2);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 5:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 1);
-
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 6:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 1);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 7:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 1);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 8:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 0);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 0, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 9:
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 2);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 0);
-                        Grid.SetRow(RoteEllipse, 1);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 2);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 0);
-                        Grid.SetColumn(RoteEllipse, 1);
-                        Grid.SetRow(RoteEllipse, 1);
-
-                        GridRot.Children.Add(RoteEllipse);
+                        setCell(GridRot, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridRot, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                 }
 
                 switch (UntereAugenzahl)
                 {
                     case 1:
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 2:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 3:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 4:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 5:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 6:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 7:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 8:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 0, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                     case 9:
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 2);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 0);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 2);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 0);
-                        Grid.SetColumn(SchwarzeEllipse, 1);
-                        Grid.SetRow(SchwarzeEllipse, 1);
-
-                        GridSchwarz.Children.Add(SchwarzeEllipse);
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
                         break;
                 }
 
                 //Das Gitterfeld wird dem Rahmen zugefügt und der Rahmen dem Spielstein    
-                //BorderRot.IsAncestorOf(GridRot);
-                //BorderSchwarz.IsAncestorOf(GridSchwarz);
+                BorderRot.Child = GridRot;
+                BorderSchwarz.Child = GridSchwarz;
                 stein.Children.Add(BorderRot);
                 stein.Children.Add(BorderSchwarz);
+        }
+
+        private static void setCell(Grid grid, int column, int row, Ellipse ellipse)
+        {
+            Grid.SetColumn(ellipse, column);
+            Grid.SetRow(ellipse, row);
+
+            grid.Children.Add(ellipse);
+        }
+
+        private static Ellipse createEllipse(SolidColorBrush farbe)
+        {
+            Ellipse ellipse = new Ellipse();
+
+            ellipse.Fill = farbe;
+            ellipse.HorizontalAlignment = HorizontalAlignment.Center;
+            ellipse.Height = 5;
+            ellipse.Stroke = farbe;
+            ellipse.VerticalAlignment = VerticalAlignment.Center;
+            ellipse.Width = 5;
+            return ellipse;
         }
 
         public int ObereAugenzahl {
