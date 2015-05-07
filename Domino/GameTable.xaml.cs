@@ -40,12 +40,12 @@ namespace Domino
             //der Klasse Dominostein zugewiesen und in eine Liste gepackt
             for (int o = 0; o < 10; o++)
             {
-
+                for (int u = 0; u < 10; u++)
+                {
                     ObereAugenzahl = o;
                     UntereAugenzahl = o;
-
                     DStein.Add(new Dominostein(ObereAugenzahl, UntereAugenzahl));
-
+                }
             }
 
             //Positionsvariabel für die Position von links aus gesehen
