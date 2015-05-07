@@ -40,7 +40,7 @@ namespace Domino
             //der Klasse Dominostein zugewiesen und in eine Liste gepackt
             for (int o = 0; o < 10; o++)
             {
-                for (int u = 0; u < 10; u++)
+                for (int u = 0; u <= o; u++)
                 {
                     ObereAugenzahl = o;
                     UntereAugenzahl = u;
@@ -52,7 +52,7 @@ namespace Domino
             int l = 0;
 
             //Erstellung des StackPanel-Arrays für die Spielflächen der 4 Spieler
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < player; i++)
             {
                 sp[i] = new StackPanel();
                 Canvas.SetLeft(sp[i], l);
@@ -81,23 +81,21 @@ namespace Domino
 
                 //Hier sollten die Farben der Spielflächen dynamisch erstellt werden, da aber das Ergebnis
                 //unbefriedigend war, wurde diese Idee erst einmal verworfen
-                //int r = i * 25 + 100;
-                //int g = i * 27 + 100;
-                //int b = i * 25 + 100;
+                int r = (i + 1) * 50 + 10;
+                int g = i * 50 + 50;
+                int b = i * 50 + 20;
 
-                //string hexzahl = r.ToString("X") + g.ToString("X") + b.ToString("X");
+                string hexzahl = r.ToString("X") + g.ToString("X") + b.ToString("X");
 
-                //MessageBox.Show(hexzahl);
-
-                //string farbe = "#ff" + hexzahl.ToString();
-                //sp[i].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(farbe));
+                string farbe = "#ff" + hexzahl.ToString();
+                sp[i].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(farbe));
 
             }
             //Statische Farbzuweisung der Spielflächen
-            sp[0].Background = new SolidColorBrush(Colors.Yellow);
-            sp[1].Background = new SolidColorBrush(Colors.Green);
-            sp[2].Background = new SolidColorBrush(Colors.Blue);
-            sp[3].Background = new SolidColorBrush(Colors.DarkRed);
+            //sp[0].Background = new SolidColorBrush(Colors.Yellow);
+            //sp[1].Background = new SolidColorBrush(Colors.Green);
+            //sp[2].Background = new SolidColorBrush(Colors.Blue);
+            //sp[3].Background = new SolidColorBrush(Colors.DarkRed);
 
             //sp1.RenderTransform = new RotateTransform(90);
             
