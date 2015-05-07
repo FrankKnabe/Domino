@@ -42,27 +42,28 @@ namespace Domino
 
             BorderRot.HorizontalAlignment = HorizontalAlignment.Left;
             BorderSchwarz.HorizontalAlignment = HorizontalAlignment.Left;
-            BorderRot.Height = 40;
-            BorderSchwarz.Height = 40;
+            BorderRot.Height = 45;
+            BorderSchwarz.Height = 45;
             BorderRot.VerticalAlignment = VerticalAlignment.Top;
             BorderSchwarz.VerticalAlignment = VerticalAlignment.Top;
-            BorderRot.Width = 40;
-            BorderSchwarz.Width = 40;
+            BorderRot.Width = 45;
+            BorderSchwarz.Width = 45;
             BorderRot.BorderBrush = System.Windows.Media.Brushes.Red;
             BorderSchwarz.BorderBrush = System.Windows.Media.Brushes.Black;
             BorderRot.BorderThickness = new Thickness(2);
             BorderSchwarz.BorderThickness = new Thickness(2);
             BorderRot.Margin = new Thickness(0,0,0,0);
-            BorderSchwarz.Margin = new Thickness(0,40,0,0);
+            BorderSchwarz.Margin = new Thickness(0,45,0,0);
 
             //Erstellung der Gitterfelder für die Punkte, die die Augenzahlen repräsentieren
             Grid GridRot = new Grid();
             Grid GridSchwarz = new Grid();
 
-            GridRot.Height = 44;
-            GridSchwarz.Height = 44;
-            GridRot.Width = 44;
-            GridSchwarz.Width = 44;
+            GridRot.Height = 40;
+            GridSchwarz.Height = 40;
+            GridRot.Width = 40;
+            GridSchwarz.Width = 40;
+            //GridRot.is
 
             //Die Reihen und Zeilen, die ein 3x3 Gitterfeld erzeugen
             ColumnDefinition[] colDef = new ColumnDefinition[3];
@@ -153,67 +154,67 @@ namespace Domino
                 switch (UntereAugenzahl)
                 {
                     case 1:
-                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 2:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 3:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 4:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 5:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 6:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 7:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 8:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 0, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 0, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                     case 9:
-                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 2, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 0, createEllipse(System.Windows.Media.Brushes.Red));
-                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Red));
+                        setCell(GridSchwarz, 0, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 2, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 0, 1, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 2, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 0, createEllipse(System.Windows.Media.Brushes.Black));
+                        setCell(GridSchwarz, 1, 1, createEllipse(System.Windows.Media.Brushes.Black));
                         break;
                 }
 
@@ -224,6 +225,7 @@ namespace Domino
                 stein.Children.Add(BorderSchwarz);
         }
 
+        //Methode zur Bestimmung der Position des Punktes für die Augenzahlen
         private static void setCell(Grid grid, int column, int row, Ellipse ellipse)
         {
             Grid.SetColumn(ellipse, column);
@@ -232,6 +234,7 @@ namespace Domino
             grid.Children.Add(ellipse);
         }
 
+        //Erstellung eines Punktes, der die Augenzahl repräsentieren soll
         private static Ellipse createEllipse(SolidColorBrush farbe)
         {
             Ellipse ellipse = new Ellipse();

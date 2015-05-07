@@ -43,7 +43,7 @@ namespace Domino
                 for (int u = 0; u < 10; u++)
                 {
                     ObereAugenzahl = o;
-                    UntereAugenzahl = o;
+                    UntereAugenzahl = u;
                     DStein.Add(new Dominostein(ObereAugenzahl, UntereAugenzahl));
                 }
             }
