@@ -63,7 +63,7 @@ namespace Domino
                 sp[i].VerticalAlignment = System.Windows.VerticalAlignment.Top;
                 sp[i].Height = 100;
                 sp[i].Width = 230;
-                sp[i].Visibility = Visibility.Hidden;
+                //sp[i].Visibility = Visibility.Hidden;
                 
                 //Hinzufügen eines Grids, indem die Spielsteine hinzugefügt werden sollen. Dabei werden
                 //sie zufällig aus der Listen gezogen und entsprechend auch aus der Liste gelöscht
@@ -146,26 +146,39 @@ namespace Domino
             //Anfangsspieler wird ermittelt
             int aktiverSpieler = 0;
             int maxWert = 0;
+            bool paschvorhanden = false;
             for (int z = 0; z < sp.Count(); z++)
             {
                 
                 foreach(Dominostein spielstein in sp[z].Children)
                 {
-                    if (spielstein.ObereAugenzahl == spielstein.UntereAugenzahl)
+                    int gesamtaugenzahl = spielstein.ObereAugenzahl + spielstein.UntereAugenzahl;
+                    //maxWert = gesamtaugenzahl;
+                    //aktiverSpieler = z;
+                    if (spielstein.ObereAugenzahl == spielstein.UntereAugenzahl && !paschvorhanden)
                     {
-                        int gesamtaugenzahl = spielstein.ObereAugenzahl + spielstein.UntereAugenzahl;
-                        if (gesamtaugenzahl > maxWert)
-                        {
-                            maxWert = gesamtaugenzahl;
-                            aktiverSpieler = z;
-                        }
-
+                        maxWert = gesamtaugenzahl;
+                        aktiverSpieler = z;
+                        paschvorhanden = true;
+                    }
+                    else if (spielstein.ObereAugenzahl == spielstein.UntereAugenzahl && paschvorhanden && gesamtaugenzahl >= maxWert)
+                    {
+                        maxWert = gesamtaugenzahl;
+                        aktiverSpieler = z;
+                        paschvorhanden = true;
+                    }
+                    if (!paschvorhanden && gesamtaugenzahl >= maxWert)
+                    {
+                        maxWert = gesamtaugenzahl;
+                        aktiverSpieler = z;
                     }
 
                 }
-
+                
             }
-            sp[aktiverSpieler].Visibility = Visibility.Visible;
+            //sp[aktiverSpieler].Visibility = Visibility.Visible;
+            sp[aktiverSpieler].Background = new SolidColorBrush(Colors.HotPink);
+
         }
     }
 }
