@@ -27,9 +27,12 @@ namespace Domino
         {
             InitializeComponent();
         }
-        public Dominostein(int ObereAugenzahl, int UntereAugenzahl)
+        public Dominostein(int OAugenzahl, int UAugenzahl)
         {
             //Konstruktor für den Dominostein, die Augenzahlen als Parameter übergeben
+            //int AugenOben = ObereAugenzahl;
+            ObereAugenzahl = OAugenzahl;
+            UntereAugenzahl = UAugenzahl;
             InitializeComponent();
             InitDominostein(ObereAugenzahl, UntereAugenzahl);
         }
@@ -223,6 +226,7 @@ namespace Domino
                 BorderSchwarz.Child = GridSchwarz;
                 stein.Children.Add(BorderRot);
                 stein.Children.Add(BorderSchwarz);
+                
         }
 
         //Methode zur Bestimmung der Position des Punktes für die Augenzahlen
@@ -250,12 +254,12 @@ namespace Domino
 
         public int ObereAugenzahl {
             get { return _ObereAugenzahl; }
-            set { _ObereAugenzahl = value; InitDominostein(value, UntereAugenzahl); }
+            set { _ObereAugenzahl = value; /*InitDominostein(value, UntereAugenzahl);*/ }
         }
 
         public int UntereAugenzahl { 
             get{ return _UnterAugenzahl;}
-            set { _UnterAugenzahl = value; InitDominostein(ObereAugenzahl, value); }
+            set { _UnterAugenzahl = value; /*InitDominostein(ObereAugenzahl, value);*/ }
         }
 
     }

@@ -17,7 +17,7 @@
             </Button.Background>
         </Button>
         <WindowsFormsHost x:Name="numud" Canvas.Top="273" Canvas.Left="182" >
-            <num:NumericUpDown Maximum="4" Minimum="1"/>
+            <num:NumericUpDown Maximum="4" Minimum="2"/>
         </WindowsFormsHost>
     </Canvas>
 </Window>

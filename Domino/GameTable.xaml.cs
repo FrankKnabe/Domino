@@ -25,7 +25,7 @@ namespace Domino
             InitializeComponent();
             //Initialisierung der Variabeln
             //Die StackPanel dienen als Spielflächen, erstmal für maximal 4 Spieler
-            StackPanel[] sp= new StackPanel[4];
+            StackPanel[] sp= new StackPanel[player];
 
             int ObereAugenzahl = 0;
             int UntereAugenzahl = 0;
@@ -63,6 +63,7 @@ namespace Domino
                 sp[i].VerticalAlignment = System.Windows.VerticalAlignment.Top;
                 sp[i].Height = 100;
                 sp[i].Width = 230;
+                sp[i].Visibility = Visibility.Hidden;
                 
                 //Hinzufügen eines Grids, indem die Spielsteine hinzugefügt werden sollen. Dabei werden
                 //sie zufällig aus der Listen gezogen und entsprechend auch aus der Liste gelöscht
@@ -141,6 +142,30 @@ namespace Domino
             Canvas.SetLeft(lblStapel, 4);
             Canvas.SetTop(lblStapel, 450);
             Spieltisch.Children.Add(lblStapel);
+
+            //Anfangsspieler wird ermittelt
+            int aktiverSpieler = 0;
+            int maxWert = 0;
+            for (int z = 0; z < sp.Count(); z++)
+            {
+                
+                foreach(Dominostein spielstein in sp[z].Children)
+                {
+                    if (spielstein.ObereAugenzahl == spielstein.UntereAugenzahl)
+                    {
+                        int gesamtaugenzahl = spielstein.ObereAugenzahl + spielstein.UntereAugenzahl;
+                        if (gesamtaugenzahl > maxWert)
+                        {
+                            maxWert = gesamtaugenzahl;
+                            aktiverSpieler = z;
+                        }
+
+                    }
+
+                }
+
+            }
+            sp[aktiverSpieler].Visibility = Visibility.Visible;
         }
     }
 }
