@@ -58,7 +58,7 @@ namespace Domino
                 Canvas.SetLeft(sp[i], l);
                 Canvas.SetTop(sp[i], 10);
                 sp[i].Orientation = Orientation.Horizontal;
-                sp[i].Name = "Spieler" + i+1;
+                sp[i].Name = String.Format("Spieler_{0}",i+1);
                 sp[i].HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                 sp[i].VerticalAlignment = System.Windows.VerticalAlignment.Top;
                 sp[i].Height = 100;
@@ -68,37 +68,79 @@ namespace Domino
                 //sie zufällig aus der Listen gezogen und entsprechend auch aus der Liste gelöscht
                 for (int j = 0; j < 5; j++)
                 {
-                  Grid.SetRow(sp[i], j);
-                  zufallszahl = rnd.Next(0, DStein.Count);
-                  sp[i].Children.Add(DStein[zufallszahl]);
-                  DStein.RemoveAt(zufallszahl);
+                    Grid.SetRow(sp[i], j);
+                    zufallszahl = rnd.Next(0, DStein.Count);
+                    sp[i].Children.Add(DStein[zufallszahl]);
+                    Label lblPlayer = new Label();
+                    Canvas.SetLeft(lblPlayer, l);
+                    Canvas.SetTop(lblPlayer, 120);
+                    lblPlayer.FontSize = 18;
+                    lblPlayer.Content = "Spieler " + (i+1); 
+                    Spieltisch.Children.Add(lblPlayer);
+                    DStein.RemoveAt(zufallszahl);
                 }
 
                 //Die Spielfläche/StackPanel werden am Spieltisch angebracht 
                 Spieltisch.Children.Add(sp[i]);
                 //Die Position der nächsten Spielfläche wird bestimmt
                 l += 350;
+                string farbe = "";
 
-                //Hier sollten die Farben der Spielflächen dynamisch erstellt werden, da aber das Ergebnis
-                //unbefriedigend war, wurde diese Idee erst einmal verworfen
-                int r = (i + 1) * 50 + 10;
-                int g = i * 50 + 50;
-                int b = i * 50 + 20;
+                //Hier werden die Farben der Spielflächen dynamisch erstellt
+                switch (i)
+                {
+                     case 0:
+                        farbe = "#0000FF";
+                        break;
+                    case 1:
+                        farbe = "#EEEE00";
+                        break;
+                    case 2:
+                        farbe = "#008B00";
+                        break;
+                    case 3:
+                        farbe = "#8B0000";
+                        break;
 
-                string hexzahl = r.ToString("X") + g.ToString("X") + b.ToString("X");
+                }
 
-                string farbe = "#ff" + hexzahl.ToString();
                 sp[i].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(farbe));
 
-            }
-            //Statische Farbzuweisung der Spielflächen
-            //sp[0].Background = new SolidColorBrush(Colors.Yellow);
-            //sp[1].Background = new SolidColorBrush(Colors.Green);
-            //sp[2].Background = new SolidColorBrush(Colors.Blue);
-            //sp[3].Background = new SolidColorBrush(Colors.DarkRed);
 
-            //sp1.RenderTransform = new RotateTransform(90);
-            
+            }
+
+            //Das Feld für den ersten Spielstein wird erzeugt
+            StackPanel Ausgangsfeld = new StackPanel();
+            Canvas.SetLeft(Ausgangsfeld, 585);
+            Canvas.SetTop(Ausgangsfeld, 490);
+            Ausgangsfeld.Orientation = Orientation.Horizontal;
+            Ausgangsfeld.Width = 90;
+            Ausgangsfeld.Height = 50;
+            Ausgangsfeld.HorizontalAlignment = HorizontalAlignment.Left;
+            Ausgangsfeld.VerticalAlignment = VerticalAlignment.Top;
+            Ausgangsfeld.Background = new SolidColorBrush(Colors.Gray);
+            Spieltisch.Children.Add(Ausgangsfeld);
+
+            //Der Anfangsspielstein wird auf das Spielfeld platziert
+            zufallszahl = rnd.Next(0, DStein.Count);
+            Canvas.SetLeft(DStein[zufallszahl], 585);
+            Canvas.SetTop(DStein[zufallszahl], 490);
+            DStein[zufallszahl].LayoutTransform = new RotateTransform(90);
+            Spieltisch.Children.Add(DStein[zufallszahl]);
+            DStein.RemoveAt(zufallszahl);
+
+            //Ein Stapel-Objekt wird erzeugt, das beim Anklicken einen neuen Spielstein aus der Liste zieht
+            Dominostein Stapel = new Dominostein(0,0);
+            Canvas.SetLeft(Stapel, 4);
+            Canvas.SetTop(Stapel, 490);
+            Spieltisch.Children.Add(Stapel);
+            Label lblStapel = new Label();
+            lblStapel.FontSize = 14;
+            lblStapel.FontWeight = FontWeights.Bold;
+            lblStapel.Content = "Stapel";
+            Canvas.SetLeft(lblStapel, 4);
+            Canvas.SetTop(lblStapel, 450);
+            Spieltisch.Children.Add(lblStapel);
         }
     }
 }
